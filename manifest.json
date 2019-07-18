@@ -1,0 +1,45 @@
+{
+    // 必须
+    "manifest_version": 2,
+    "name": "jira问题修复插件",
+    "version": "1.1.2",
+
+    // 推荐
+    // "default_locale": "en",
+    "description": "jira问题修复范本快速插入",
+    "icons":
+    {
+        "16": "src/img/icon.png", // 扩展程序页面上的图标
+        "32": "src/img/icon.png", // Windows计算机通常需要此大小。提供此选项可防止尺寸失真缩小48x48选项。
+        "48": "src/img/icon.png", // 显示在扩展程序管理页面上
+        "128": "src/img/icon.png" // 在安装和Chrome Webstore中显示
+    },
+
+    // 可选
+    // "background": {
+    // 	"page": "background/background.html",
+    // 	"scripts": ["background.js"],
+    // 	// 推荐
+    // 	"persistent": false
+    // },
+    // "browser_action": {
+    // 	"default_icon": "src/img/icon.png",	
+    // 	// 特定于工具栏的图标，至少建议使用16x16和32x32尺寸，应为方形，
+    // 	// 不然会变形
+    // 	"default_title": "悬浮在工具栏插件图标上时的tooltip内容",
+    // 	"default_popup": "hello.html"	// 不允许内联JavaScript。
+    // },
+    "content_scripts": [
+    {
+        "js": ["src/index.js"],
+        "matches": ["http://jira.bitmain.vip/*", "https://jira.bitmain.vip/*"],
+        "run_at": "document_start"
+    }],
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "web_accessible_resources": ["src/*", "src/**/*"]
+}
