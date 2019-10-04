@@ -2,7 +2,7 @@
 	const $ = doc.querySelector.bind(doc);
 	win.onload = function() {
 		doc.onkeyup = function(e) {
-			const iframe = $("#mce_0_ifr");
+			const iframe = $(".mce-edit-area iframe");
 			if (!iframe) return;
 			if (e.altKey && e.keyCode === 68 /*c*/) {
 				const iframeDoc = iframe.contentDocument;
