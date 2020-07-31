@@ -4,8 +4,8 @@
 		doc.onkeyup = function(e) {
 			const iframe = $(".mce-edit-area iframe");
 			if (!iframe) return;
-			if (e.altKey && e.keyCode === 68 /*c*/) {
-				const iframeDoc = iframe.contentDocument;
+			const iframeDoc = iframe.contentDocument;
+			if (e.altKey && e.keyCode === 68 /*D*/) {
 				iframeDoc.body.innerHTML = `
 					<p>
 						说明：
@@ -14,7 +14,31 @@
 						时间：${new Date().toLocaleString()}
 					</p>
 					<p>
-						版本：test分支
+						版本：test-2.0分支
+					</p>
+				`;
+			} else if (e.altKey && e.keyCode === 65 /*A*/) {
+				iframeDoc.body.innerHTML = `
+					<p>
+						说明：
+					</p>
+					<p>
+						时间：${new Date().toLocaleString()}
+					</p>
+					<p>
+						版本：test-2.0-guoyang分支
+					</p>
+				`;
+			} else if (e.altKey && e.keyCode === 66 /*B*/) {
+				iframeDoc.body.innerHTML = `
+					<p>
+						说明：
+					</p>
+					<p>
+						时间：${new Date().toLocaleString()}
+					</p>
+					<p>
+						版本：test-2.5分支
 					</p>
 				`;
 			}
