@@ -2,7 +2,7 @@
     // 必须
     "manifest_version": 2,
     "name": "jira问题修复插件",
-    "version": "1.1.5",
+    "version": "1.1.6",
 
     // 推荐
     // "default_locale": "en",

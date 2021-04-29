@@ -77,6 +77,18 @@
 						版本：test-2.5分支
 					</p>
 				`
+			} else if (e.altKey && e.keyCode === 67 /*c*/) {
+				iframeDoc.body.innerHTML = `
+					<p>
+						说明：已修复
+					</p>
+					<p>
+						时间：${new Date().toLocaleString()}
+					</p>
+					<p>
+						版本：test分支
+					</p>
+				`
 			}
 			fireKeyEvent(iframeDoc.body, 'keyup', 13)
 		}
