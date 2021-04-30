@@ -36,7 +36,8 @@
 	}
 
 	const $ = doc.querySelector.bind(doc)
-	win.onload = function() {
+	// doc.oncontent
+	win.addEventListener('DOMContentLoaded', function() {
 		doc.onkeyup = function(e) {
 			const iframe = $('.mce-edit-area iframe')
 			if (!iframe) return
@@ -92,7 +93,7 @@
 			}
 			fireKeyEvent(iframeDoc.body, 'keyup', 13)
 		}
-	}
+	})
 	win.onbeforeunload = function() {
 		doc.onkeyup = null
 	}
